@@ -1,5 +1,5 @@
 ---
-name: 04 Build with Metadata
+name: Test Meta
 
 on:
   workflow_dispatch:
