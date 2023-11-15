@@ -74,7 +74,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v5
         with:
-          images: switz21/docker-ci-automation,ghcr.io/switz21/docker-ci-automation
+          images: switz21/docker-ci-automation,ghcr.io/switzlg/docker-ci-automation
           flavor: |
             latest=false
           tags: |
