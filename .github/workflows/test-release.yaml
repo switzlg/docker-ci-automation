@@ -2,7 +2,7 @@ name: Echo GitHub Ref
 
 on:
   release:
-    types: [created, edited]
+    types: [published]
 
 jobs:
   echo_ref:
