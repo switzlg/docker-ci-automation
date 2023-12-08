@@ -2,7 +2,7 @@ name: Echo GitHub Ref
 
 on:
   release:
-    types: [released]
+    types: [published]
 
 jobs:
   echo_ref:
@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: echo ref
         run: echo "${{ github.ref }}"
-      #- name: Echo GitHub Ref
-      #  if: ${{ github.event_name == 'release' && github.event.release.tag_name != null }}
-      #  run: echo "Newly created Git tag: ${{ github.event.release.tag_name }}"
+      - name: Echo GitHub Ref
+        if: ${{ github.event_name == 'release' && github.event.release.tag_name != null }}
+        run: echo "Newly created Git tag: ${{ github.event.release.tag_name }}"
