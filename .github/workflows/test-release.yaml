@@ -2,7 +2,7 @@ name: Echo GitHub Ref
 
 on:
   release:
-    types: [published]
+    types: [released]
 
 jobs:
   echo_ref:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Echo GitHub Ref
         if: github.event_name == 'release'
-        run: echo '${{ toJson(github) }}' | jq .
+        run: echo "Newly created Git tag: ${{ github.event.release.tag_name }}"
