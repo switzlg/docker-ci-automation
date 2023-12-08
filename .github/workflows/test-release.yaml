@@ -1,9 +1,8 @@
 name: Echo GitHub Ref
 
 on:
-  push:
-    branches:
-      - 'releases/**'
+  release:
+    types: [created, edited]
 
 jobs:
   echo_ref:
@@ -12,3 +11,5 @@ jobs:
     steps:
       - name: Echo GitHub Ref
         run: echo "The value of github.ref is ${{ github.ref }}"
+      - name: Echo Git Tag for Release
+        run: echo "Git tag for the release: ${{ github.event.release.tag_name }}"
