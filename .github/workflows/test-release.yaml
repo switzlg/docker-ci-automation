@@ -10,5 +10,5 @@ jobs:
 
     steps:
       - name: Echo GitHub Ref
-        if: github.event_name == 'release'
+        if: ${{ github.event_name == 'release' && github.event.release.tag_name != null }}
         run: echo "Newly created Git tag: ${{ github.event.release.tag_name }}"
