@@ -11,8 +11,4 @@ jobs:
     steps:
       - name: Echo GitHub Ref
         if: github.event_name == 'release'
-        run: echo "The value of github.ref is ${{ github.ref }}"
-      
-      - name: Echo New Git Tag
-        if: github.event_name == 'release'
-        run: echo "My object: ${{ toJson(github.event.release) }}"
+        run: echo "The value of github.ref is ${{ github.event.release }}"
