@@ -14,5 +14,5 @@ jobs:
         run: echo "The value of github.ref is ${{ github.ref }}"
       
       - name: Echo New Git Tag
-        if: github.event_name == 'release' && github.event.release.tag_name != null
-        run: echo "Newly created Git tag: ${{ github.event.release.tag_name }}"
+        if: github.event_name == 'release'
+        run: echo "My object: ${{ toJson(github.event.release) }}"
