@@ -11,5 +11,7 @@ jobs:
     steps:
       - name: Echo GitHub Ref
         run: echo "The value of github.ref is ${{ github.ref }}"
+
       - name: Echo Git Tag for Release
+        if: github.event_name == 'release'
         run: echo "Git tag for the release: ${{ github.event.release.tag_name }}"
