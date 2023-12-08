@@ -1,0 +1,14 @@
+name: Echo GitHub Ref
+
+on:
+  push:
+    branches:
+      - 'releases/**'
+
+jobs:
+  echo_ref:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo GitHub Ref
+        run: echo "The value of github.ref is ${{ github.ref }}"
