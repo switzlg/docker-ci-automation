@@ -3,6 +3,8 @@ FROM nginx:1.25.3-alpine as base
 
 RUN apk add --no-cache curl
 
+RUN apk upgrade --available
+
 WORKDIR /test
 
 COPY . .
